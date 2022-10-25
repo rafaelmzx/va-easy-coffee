@@ -1,13 +1,14 @@
 import React from 'react'
-// import Button, { ButtonProps } from 'react-bootstrap/Button'
-// import Button, { ButtonProps } from '@mui/material/Button'
+import Button from './Button.style'
 
-// interface ButtonInterface extends ButtonProps {
-//   colorTest?: string
-// }
+interface ButtonInterface {
+  children?: JSX.Element | string
+}
 
-const ButtonComponent = () => (
-  <button>Primary</button>
+const ButtonComponent = ({
+  children,
+}: ButtonInterface) => (
+  <Button>{children}</Button>
 )
 
 export default ButtonComponent
