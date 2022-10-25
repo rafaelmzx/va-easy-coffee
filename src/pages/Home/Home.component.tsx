@@ -10,6 +10,8 @@ import Typography from '../../components/atoms/Typography'
 import Input from '../../components/atoms/Input'
 import {useUser} from '../../context/User'
 
+import logoeasycoffee from '../../assets/images/logoeasycoffee.svg'
+
 const Home = () => {
   const {dispatch} = useUser()
   const [cpf, setCpf] = useState<string>('')

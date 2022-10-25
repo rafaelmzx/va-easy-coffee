@@ -1,25 +1,24 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom'
+
+import {UserProvider} from './context/User'
 
 import Home from './pages/Home'
+import Product from './pages/Product'
 
-
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
-  )
-}
-
-const App2 = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="inicio" element={<Home />} />
-    </Routes>
-  </BrowserRouter>
+const App = () =>  (
+  <UserProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="produtos" element={<Product />} />
+      </Routes>
+    </BrowserRouter>
+  </UserProvider>
 )
 
-export default App2
+export default App
