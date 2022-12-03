@@ -1,9 +1,10 @@
 import {createGlobalStyle} from 'styled-components'
-import coffeBean from '../images/backgroundcoffeebeans.svg'
+import coffeBean from '../images/coffee_bean.svg'
 
-import { colors } from '../variables'
+import { colors, sizes, fontSizes } from '../styles/variables'
 
-const { backgroundWhite } = colors
+const { veryLightGray } = colors
+const { size100Percent } = sizes
 
 const GlobalStyle = createGlobalStyle`
 
@@ -12,13 +13,45 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 10px !important;
+    height: ${size100Percent};
+
   }
 
   body {
-    background-color: ${backgroundWhite};
+    background-color: ${veryLightGray};
     background-image: url(${coffeBean});
-    background-size: 400px;
     height: 100vh;
+  }
+
+  h1 {
+    font-size: ${fontSizes.fontSize32};
+  }
+
+  h2 {
+    font-size: ${fontSizes.fontSize24};
+  }
+
+  h3 {
+    font-size: ${fontSizes.fontSize18};
+  }
+
+  h4 {
+    font-size: ${fontSizes.fontSize16};
+  }
+
+  p {
+    font-size: ${fontSizes.fontSize14};
+  }
+
+  .custom-toast {
+    font-family: 'Roboto', sans-serif;
+    font-size: ${fontSizes.fontSize14};
   }
 `
 
