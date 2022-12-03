@@ -5,12 +5,17 @@ export const useFormats = () => {
     !value ? 'R$ 0,00' : value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
   ), [])
 
-  const getFisrtName = useCallback((fullName?: string) => (
+  const getFirstName = useCallback((fullName?: string) => (
     !fullName ? '' : fullName.split(' ')[0]
   ), [])
 
+  const formatDateDDMMYYYY = (data: Date) => (
+    `${data.getDate()}/${data.getMonth()}/${data.getFullYear()}`
+  )
+
   return {
     formatCurrency,
-    getFisrtName,
+    getFirstName,
+    formatDateDDMMYYYY
   }
 }
