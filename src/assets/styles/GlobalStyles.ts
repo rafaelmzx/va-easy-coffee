@@ -2,6 +2,7 @@ import {createGlobalStyle} from 'styled-components'
 import coffeBean from '../images/coffee_bean.svg'
 
 import { colors, sizes, fontSizes } from '../styles/variables'
+import { device } from '../../config/device'
 
 const { veryLightGray } = colors
 const { size100Percent } = sizes
@@ -20,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     font-size: 10px !important;
     height: ${size100Percent};
+
+    @media ${device.xxs} {
+      font-size: 8.5px !important;
+    }
 
   }
 
